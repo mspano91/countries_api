@@ -1,15 +1,15 @@
 const axios = require("axios");
 
-const URL = "https://restcountries.com/v3.1/independent?status=true";
+const URL = "https://restcountries.com/v3.1";
 
 const getCountries = async () => {
   try {
-    const response = await axios.get(`${URL}`);
+    const response = await axios.get(`${URL}/all`);
     const countries = response.data;
     const list = countries.map((data) => {
       return {
         key: data.id,
-        name: data.name.official,
+        name: data.name.common,
         capital: data.capital,
         continent: data.continents,
         population: data.population,
