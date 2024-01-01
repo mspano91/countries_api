@@ -8,8 +8,8 @@ const app = express();
 // const indexRouter = require("/")
 
 app.use(morgan("dev"));
-app.use("/", mainRouter);
 app.use(cors("*"));
+app.use("/", mainRouter);
 app.listen(PORT, () => {});
 
 module.exports = app;
